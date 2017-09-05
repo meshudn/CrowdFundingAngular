@@ -1,0 +1,57 @@
+
+
+<!-- ------------*---------------
+   Section Name: All post Area
+
+   Created by: Meshu Debnath
+   -------------*--------------
+-->
+
+<div class="container-fluid contentWrapper">
+  <div class="container">
+    <div class="row">
+      <div class="contentHeading alert">
+        <h4>Recomended for you</h4>
+      </div>
+
+      <div class="col-sm-4" *ngFor="let item of postItems">
+        <div class="signlePost">
+
+          <div class="coverImg">
+            <a class="btn btn-link tagLine"><i class="fa fa-location-arrow"></i> Trending</a>
+            <img src="assets/img/{{item.image}}" class="img-responsive" alt="post image">
+            <h4>{{item.title}}</h4>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar" style="width: 60%;"></div>
+          </div>
+
+          <h4 class="amountDetails">${{item.total_amount}} raised of ${{item.target_amount}}</h4>
+
+          <p class="postText">
+            {{item.description}}
+          </p>
+
+          <a routerLink="/details" class="read_more" (click)="passingDetails(item.id)">+ Read More</a>
+        </div>
+      </div>
+
+
+
+
+      <!-- total 6 post above -->
+
+      <!-- ------------*---------------
+         Pagination ::
+         -------------*--------------
+      -->
+      <div class="clearfix"></div>
+      <div class="alert viewMore">
+        <a class="h4" (click)="onClickAdd()">View More Campaigns</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,20 +1,378 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
+
+<!-- ----------------------
+    Navigation Area
+    plugin: bootsnav
+    effect: bootsnav center
+
+    ==*== Created by: Meshu Debnath ==*==
+-->
+
+<nav class="navbar navbar-default brand-center center-side bootsnav">
+
+    <div class="container">
+        <!-- Start Header Navigation -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" routerLink="/home"><img src="assets/img/logo.jpg" class="logo" alt=""></a>
+        </div>
+        <!-- End Header Navigation -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#"><i class="fa fa-flash"></i> Start A Campaign</a></li>
+                <li><a href="#">Log in</a></li>
+                <li><a href="#">Sign up</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+<!-- ------------*---------------
+   Section Name: slider
+   plugin:
+   Created by: Meshu Debnath
+   -------------*--------------
+-->
+<div class="container-fluid owl_slider">
+    <div class="row">
+        <div class="mySlider owl-carousel">
+            <div>
+                <img src="assets/img/p1.JPG" class="img-responsive" alt="">
+
+                <div class="sliderCaption">
+                    <div class="col-sm-8">
+                        <h4>Cinder Grill wins $75K in Flash Funding!</h4>
+                        <p>
+                            Precision cooking appliance receives flash funding via the Arrow Certification Program.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="" class="learn_more btn btn-link">LEARN MORE</a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div>
+                <img src="assets/img/p2.jpg" class="img-responsive" alt="">
+
+                <div class="sliderCaption">
+                    <div class="col-sm-8">
+                        <h4>Motu Patlu Grill wins $75K in Flash Funding!</h4>
+                        <p>
+                            Precision cooking appliance receives flash funding via the Arrow Certification Program.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="" class="learn_more btn btn-link">LEARN MORE</a>
+                    </div>
+
+                </div>
+            </div>
+            <div><img src="assets/img/p3.png" class="img-responsive" alt="">
+
+                <div class="sliderCaption">
+                    <div class="col-sm-8">
+                        <h4>Boxer Grill wins $75K in Flash Funding!</h4>
+                        <p>
+                            Precision cooking appliance receives flash funding via the Arrow Certification Program.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="" class="learn_more btn btn-link">LEARN MORE</a>
+                    </div>
+
+                </div>
+            </div>
+            <div>
+                <img src="assets/img/p1.JPG" class="img-responsive" alt="">
+                <div class="sliderCaption">
+                    <div class="col-sm-8">
+                        <h4>Cingam Grill wins $75K in Flash Funding!</h4>
+                        <p>
+                            Precision cooking appliance receives flash funding via the Arrow Certification Program.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="" class="learn_more btn btn-link">LEARN MORE</a>
+                    </div>
+
+                </div>
+            </div>
+            <div>
+                <img src="assets/img/p2.jpg" class="img-responsive" alt="">
+                <div class="sliderCaption">
+                    <div class="col-sm-8">
+                        <h4>Meshu Grill wins $75K in Flash Funding!</h4>
+                        <p>
+                            Precision cooking appliance receives flash funding via the Arrow Certification Program.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="" class="learn_more btn btn-link">LEARN MORE</a>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://blog.angular.io//">Angular blog</a></h2>
-  </li>
-</ul>
+
+
+<!-- ------------*---------------
+   Section Name: Category
+   Created by: Meshu Debnath
+   -------------*--------------
+-->
+<div class="container-fluid categoryWrapper">
+    <div class="container">
+        <div class="row">
+            <div class="category_carousel owl-carousel">
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_medical"></div>
+                    </div>
+                    <h4><a href="#">Medical</a></h4>
+                </div>
+
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_other"></div>
+                    </div>
+                    <h4><a href="#">Other</a></h4>
+                </div>
+
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_volunteer"></div>
+                    </div>
+                    <h4><a href="#">Volunteer</a></h4>
+                </div>
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_emerg"></div>
+                    </div>
+                    <h4><a href="#">Emergencies</a></h4>
+                </div>
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_edu"></div>
+                    </div>
+                    <h4><a href="#">Education</a></h4>
+                </div>
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_memo"></div>
+                    </div>
+                    <h4><a href="#">Memories</a></h4>
+                </div>
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_sports"></div>
+                    </div>
+                    <h4><a href="#">Sports</a></h4>
+                </div>
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_animals"></div>
+                    </div>
+                    <h4><a href="#">Animals</a></h4>
+                </div>
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_wishes"></div>
+                    </div>
+                    <h4><a href="#">Wishes</a></h4>
+                </div>
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_events"></div>
+                    </div>
+                    <h4><a href="#">Events</a></h4>
+                </div>
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_business"></div>
+                    </div>
+                    <h4><a href="#">Business</a></h4>
+                </div>
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_creative"></div>
+                    </div>
+                    <h4><a href="#">Creative</a></h4>
+                </div>
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_charity"></div>
+                    </div>
+                    <h4><a href="#">Charity</a></h4>
+                </div>
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_travel"></div>
+                    </div>
+                    <h4><a href="#">Travel</a></h4>
+                </div>
+                <div class="categoryItem">
+                    <div class="categoryCircle">
+                        <div class="categoryImg categoryCircle_community"></div>
+                    </div>
+                    <h4><a href="#">Community</a></h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ------------------------- Container body for angular -- -------------->
+
+<app-post></app-post>
+
+<router-outlet></router-outlet>
+
+
+
+<!-- ------------*---------------
+   Section Name: Footer Area
+   Sub section : Top footer
+   Created by: Meshu Debnath
+   -------------*--------------
+-->
+<div class="container-fluid footerWrapper">
+    <div class="container">
+
+        <div class="row topFooter">
+            <div class="col-sm-4 ">
+                <div class="topFooterItem">
+                    <div class="leftImg"></div>
+                    <div class="rightImg">
+                        <h5>#1 Fundraising Platform</h5>
+                        <p>People have raised more money on CrowdFunding <sup>TM</sup> than anywhere else.</p>
+                        <a href="#">How It Works</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="topFooterItem">
+                    <div class="leftImg"></div>
+                    <div class="rightImg">
+                        <h5>MoneyBack Guarantee</h5>
+                        <p>Your donation is protected. If anything is not right, we’ll give you a full refund. </p>
+                        <a href="#">Lear More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="topFooterItem">
+                    <div class="leftImg"></div>
+                    <div class="rightImg">
+                        <h5>5-Minute Support</h5>
+                        <p>Contact us with your questions and we'll reply in 5 minutes—24/7. </p>
+                        <a href="#">Get Help</a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end of row -->
+
+        <div class="row middleFooter">
+            <div class="col-sm-4">
+                <div class="searchFooter">
+                    <img src="assets/img/logo.jpg" alt="" class="img-responsive">
+
+                    <form action="" class="form">
+                        <select class="form-control">
+                            <option value="volvo">English</option>
+                            <option value="saab">Bengali</option>
+                            <option value="opel">Hindi</option>
+                            <option value="audi">Arabic</option>
+                        </select>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="col-sm-2 middleFooterItem">
+                <h4>Get Started</h4>
+
+                <ul class="list-group list-unstyled">
+
+                    <li class=""><a href="">How It Works</a></li>
+                    <li class=""><a href="">Pricing and Fees</a></li>
+                    <li class=""><a href="">Common Questions</a></li>
+                    <li class=""><a href="">Success Stories</a></li>
+                    <li class=""><a href="">Sign Up Now</a></li>
+
+                </ul>
+            </div>
+
+            <!-- top categorys -->
+            <div class="col-sm-2 middleFooterItem">
+                <h4>Get Started</h4>
+
+                <ul class="list-group list-unstyled">
+
+                    <li class=""><a href="">How It Works</a></li>
+                    <li class=""><a href="">Pricing and Fees</a></li>
+                    <li class=""><a href="">Common Questions</a></li>
+                    <li class=""><a href="">Success Stories</a></li>
+                    <li class=""><a href="">Sign Up Now</a></li>
+
+                </ul>
+            </div>
+
+
+            <!--Learn more-->
+            <div class="col-sm-2 middleFooterItem">
+                <h4>Get Started</h4>
+
+                <ul class="list-group list-unstyled">
+
+                    <li class=""><a href="">How It Works</a></li>
+                    <li class=""><a href="">Pricing and Fees</a></li>
+                    <li class=""><a href="">Common Questions</a></li>
+                    <li class=""><a href="">Success Stories</a></li>
+                    <li class=""><a href="">Sign Up Now</a></li>
+
+                </ul>
+            </div>
+
+
+            <!-- get supported -->
+            <div class="col-sm-2 middleFooterItem">
+                <h4>Get Started</h4>
+
+                <ul class="list-group list-unstyled">
+
+                    <li class=""><a href="">How It Works</a></li>
+                    <li class=""><a href="">Pricing and Fees</a></li>
+                    <li class=""><a href="">Common Questions</a></li>
+                    <li class=""><a href="">Success Stories</a></li>
+                    <li class=""><a href="">Sign Up Now</a></li>
+
+                </ul>
+            </div>
+        </div>   <!-- end of middle footer -->
+
+        <hr>
+        <!-- copyright footer -->
+        <div class="row">
+            <div class="copyright text-center">
+                <p> &copy; 2017 <a href="#" class="text-success">CrowdFunding<sup>TM </sup> </a> &nbsp; Bangladesh Limited || All Rights Reserved</p>
+            </div>
+            <br><br>
+        </div>
+    </div> <!-- end of container -->
+</div> <!-- end of container fluid footerWrapper-->
 

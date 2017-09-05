@@ -1,0 +1,227 @@
+/*
+  Your Stylesheet
+*/
+
+body{
+    font-family: 'Lato', sans-serif;
+    background: #FEFAF6;
+
+}
+
+.like_div{
+    margin-top: 80px;
+}
+.left_part{}
+.left_part_header{}
+.left_part_body{
+    padding: 10px 0px 10px 10px;
+}
+.left_part_body h1{
+    border-bottom: 1px dotted #CACACA;
+    margin-bottom: 10px;
+    padding: 10px;
+    line-height: 1.23;
+    font-size: 28px;
+}
+.hr_tag_color{
+
+}
+.body_tab{}
+.body_tab ul{
+    margin-bottom: 20px;
+    padding: 10px 10px 0px 10px;
+    border-bottom: 1px dotted #F6E2C7;
+    height: 55px;
+
+}
+.story{
+    width: 50%;
+    text-align: center;
+    margin-left: -20px;
+    margin-right: 20px;
+}
+.story a{
+    color: #DC8A1D;
+}
+#story p{
+    font-size: 17px;
+    padding: 12px;
+}
+.update{
+    width: 50%;
+    text-align: center;
+}
+.update a{
+    color: #DC8A1D;
+}
+
+
+
+
+
+/*right column*/
+.right_part_header{
+    padding: 20px;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: #DDD;
+    border-radius: 10px;
+}
+
+#myBar {
+    width: 60%;
+    height: 11px;
+    background-color: #DC8A1D;
+    border-radius: 10px;
+}
+
+.right_part_header button{
+    width: 100%;
+    background: #C57C1A;
+    color: white;
+    height: 60px;
+    font-weight: 600;
+    font-size: 25px;
+    border-bottom: 3px solid #A66816;
+}
+.right_part_header button:hover{
+    color: white;
+    background: #DC8A1D;
+}
+
+
+.right_part_body{
+    padding: 10px;
+}
+.date_right{
+    font-size: 15px;
+    margin-left: 10px;
+    border-bottom: 1px dotted #CACACA;
+    padding-bottom: 5px;
+}
+
+.contact_whole_part{
+    padding: 10px;
+    height: 100px;
+    width: 100%;
+}
+.rf{
+    float: left;
+    border-radius: 50%;
+    padding: 15px;
+    margin-right: 25px;
+    margin-top: 5px;
+}
+.right_part_body_contact{
+    float: left;
+}
+.right_part_body_contact_name{
+    font-size: 18px;
+}
+
+.right_part_body_contact_name a{
+    margin-left: 10px;
+    color: orange;
+}
+.right_part_body_contact_name a i{}
+.right_part_body_contact_medical{}
+.right_part_body_contact_medical a{
+    color: orange;
+}
+.right_part_body_contact_medical a i{
+    margin-right: 10px;
+}
+.right_part_body_contact_map{}
+.right_part_body_contact_map a{
+    color: orange;
+}
+.right_part_body_contact_map a i{
+    margin-right: 15px;
+}
+
+
+.top_supports{
+    height: 50px;
+    background: white;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: 900;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+    margin-top: 20px;
+}
+.first_donor{
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.first_donor p{
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0px;
+    border-bottom: 1px dotted #CACACA;
+    padding-bottom: 10px;
+}
+
+.first_donor_content{
+    margin-top: 20px;
+}
+/*.first_donor_content i{
+	color: #DC8A1D;
+	display: block;
+	position: relative;
+}*/
+.first_donor a{
+    text-decoration: none;
+    color: #DC8A1D;
+    font-size: 16px;
+    font-weight: 900;
+    margin-left: 10px;
+}
+.first_donor a:hover{
+    color: #A66816;
+}
+.first_donor a span{}
+.top_supports a{
+    text-decoration: none;
+    color: #DC8A1D;
+}
+.top_supports a:hover{
+    color: #A66816;
+}
+.top_supports a span i{
+    margin-left: 5px;
+}
+
+.recent_donations{
+    padding: 0px 20px;
+}
+.border_recent{
+    border-bottom: 1px dotted #CACACA;
+    width: 320px;
+    margin-left: 104px;
+    padding-bottom: 15px;
+}
+
+.top_see_more{
+    height: 50px;
+    background: white;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: 900;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;
+
+    transition: all 0.4s ease 0s;
+}
+.top_see_more:hover{
+    background: #f4f9fc;
+}
+.top_see_more a{
+    text-decoration: none;
+    color: #DC8A1D;
+}

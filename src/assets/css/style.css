@@ -1,0 +1,444 @@
+/* -------------------------
+   Section Name: Font family installation
+  -----------***-----------*/
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900');
+/* font-family: 'Lato', sans-serif; */
+body{
+    font-family: 'Lato', sans-serif;
+    background: #f6f6f6;
+}
+/* -------------------------
+   Section Name: Navigaiton Area
+  -----------***-----------*/
+nav.navbar.bootsnav ul.nav > li > a{
+    font-family: 'Lato',sans-serif;
+    font-weight:900;
+    color: #222;
+    font-size: 15px;
+  }
+nav.navbar.bootsnav ul.nav > li{
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+  }
+nav.navbar.bootsnav ul.nav > li:hover:after{
+    position: absolute;
+    content: '';
+    width:100%;
+    left: 0;
+    bottom: 0;
+    border-bottom: 2px solid #14A56C;
+}
+nav.navbar.bootsnav ul.nav > li > a > i{
+        background: #14A56C;
+        padding: 2px 6px;
+        border-radius: 100px;
+        color: #fff;
+        margin-right:2px;
+  }
+
+nav.navbar.bootsnav{
+    -webkit-box-shadow: 0 0px 5px 0px #ddd;
+    -moz-box-shadow: 0 0px 5px 0px #ddd;
+    box-shadow: 0 0px 5px 0px #ddd;
+}
+
+@media (min-width: 700px) {
+      .navbar-brand{
+          margin-top:10px;
+      }
+}
+
+
+/* -------------------------
+   Section Name: owl Slider
+  -----------***-----------*/
+
+.owl_slider .owl-item{
+    height:350px;
+    position: relative;
+    cursor: pointer;
+}
+.owl_slider .owl-item .center{
+    z-index: 99;
+}
+.owl_slider .owl-item:before{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background: rgba(0,0,0,.6);
+    content: '';
+}
+
+.owl_slider .center:before{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background: rgba(0,0,0,.4);
+    content: '';
+}
+/*.owl_slider .owl-item:hover img{
+    z-index: 0;
+    transform: scale(1.01);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+
+}*/
+.owl-item .sliderCaption{
+    display: none;
+}
+.owl_slider .center .sliderCaption{
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left:0;
+    color: #fff;
+    padding:0px 20px;
+    margin-bottom:20px;
+}
+.owl_slider .owl-item .sliderCaption h4{
+    font-weight:700;
+}
+.owl_slider .owl-item .sliderCaption p{
+    font-size:15px;
+}
+.owl_slider .owl-item .sliderCaption .learn_more{
+    border:2px solid #fff;
+    color: #fff;
+    font-weight:700;
+    text-decoration: none;
+    margin-top:30px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.owl_slider .owl-item .sliderCaption .learn_more:hover{
+    background: #ffffff;
+    color: #000;
+    
+ }
+
+
+/* -------------------------
+   Section Name: category
+  -----------***-----------*/
+.categoryWrapper{
+    margin-top:50px;
+    margin-bottom:10px;
+
+}
+.categoryCircle{
+      background: #cbd8a7;
+      border-radius: 50%;
+      height: 5rem;
+      margin: 0 auto 1.125rem;
+      text-align: center;
+      width: 5rem;
+  }
+.categoryImg {
+    height: 4.25rem;
+    width: 4.125rem;
+}
+.category_carousel{
+    padding-top:20px;
+    padding-bottom:15px;
+    background: #fff;
+    box-shadow: 1px 1px 12px #ddd;
+}
+.categoryCircle_medical{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -950px;
+}
+.categoryCircle_other{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -2030px;
+}
+.categoryCircle_volunteer{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -2150px;
+}
+.categoryCircle_emerg{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -720px;
+}
+.categoryCircle_edu{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -1906px;
+}
+.categoryCircle_memo{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -250px;
+}
+.categoryCircle_sports{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -1305px;
+}
+.categoryCircle_animals{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -1190px;
+}
+.categoryCircle_wishes{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -1070px;
+}
+.categoryCircle_events{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -1425px;
+}
+.categoryCircle_business{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -835px;
+}
+.categoryCircle_creative{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -2405px;
+}
+.categoryCircle_charity{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -950px;
+}
+.categoryCircle_travel{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -490px;
+}
+.categoryCircle_community{
+    background: url("../img/category_logo.png") no-repeat;
+    background-position: 1px -10px;
+}
+.categoryItem {
+
+}
+.categoryItem h4{
+    text-align: center;
+}
+.categoryItem h4 a{
+    font-weight:700;
+    font-size: 15px;
+    color: #111;
+}
+.categoryWrapper:hover .owl-nav{
+    display: block;
+    animation-name: owl_animation;
+    animation-duration: 4s;
+    -webkit-animation-name: owl_animation; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+@keyframes owl_animation {
+    from {
+       opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.owl-nav{
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: -10px;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+.owl-nav i{
+    font-size:25px;
+}
+.owl-next{
+    margin-top:10px;
+}
+
+/* -------------------------
+   Section Name: content area
+  -----------***-----------*/
+
+.contentHeading{
+    background: #fff;
+    box-shadow: 1px 1px 12px #ddd;
+}
+.contentHeading h4 {
+    font-family:"Lato";
+    font-weight: 700;
+    color: #222;
+    margin:0 auto;
+}
+.contentWrapper .col-sm-4{
+    margin-bottom:20px;
+}
+.coverImg {
+    position: relative;
+}
+.coverImg img{
+    min-height:240px;
+    max-height:240px;
+}
+.signlePost {
+    box-shadow: 1px 1px 12px #ddd;
+    padding-bottom:15px;
+    background: #fff;
+}
+
+.tagLine{
+    position: absolute;
+    color: #14A56C;
+    font-weight:700;
+    background: #fff;
+    margin-left:15px;
+    margin-top:10px;
+    padding: 3px 5px;
+    text-decoration: none;
+}
+.tagLine:hover{
+    background: #fff;
+    text-decoration: none;
+    color: #222;
+}
+.coverImg h4 {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    font-weight:700;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    padding: 5px 10px;
+}
+.amountDetails {
+    font-weight: 700;
+    margin-left: 15px;
+}
+.postText {
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 80px;
+    text-align: justify;
+}
+.read_more {
+    color: #2e6da4;
+    margin-left: 15px;
+    font-weight: 700;
+}
+
+.progress {
+    height: 8px;
+    border-radius: 0px !important;
+    background: #e8e8e8;
+}
+.progress .progress-bar{
+    background: #14A56C !important;
+}
+
+.viewMore{
+    margin:20px 0px;
+    text-align: center;
+}
+.viewMore a{
+    background: #2e6da4;
+    color: #fff;
+    box-shadow: 1px 1px 12px #ddd;
+    text-decoration: none;
+    font-weight:900;
+
+    font-size:16px;
+    padding: 5px 40px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    border-bottom: 1px solid #ddd;
+}
+
+.viewMore a:hover{
+    background: #fff;
+    color: #3c763d;
+}
+
+
+/* -------------------------
+   Section Name: Footer Area
+  -----------***-----------*/
+.footerWrapper{
+    margin-top:50px;
+    background: #fff;
+}
+.topFooter{
+    margin-top:50px;
+    padding-bottom:50px;
+    margin-bottom:30px;
+    border-bottom:1px dotted #ddd;
+}
+
+.topFooterItem{
+   display: flex;
+
+}
+.topFooterItem .leftImg{
+    flex-basis:30%;
+    background: url("../img/gurantee_icon.png") no-repeat;
+    background-position: 0px 0px;
+    height:60px;
+    width: 65px;
+}
+.topFooterItem .rightImg{}
+.topFooterItem .rightImg h5{
+    font-weight:900;
+}
+.topFooterItem .rightImg p{
+    font-weight:400;
+}
+.topFooterItem .rightImg a{
+    color: #14A56C;
+    text-decoration: none;
+    cursor: pointer;
+}
+.topFooterItem .rightImg a:hover{
+    color: #2e6da4;
+}
+
+
+/* -------------------------
+   Section Name: middle Footer
+  -----------***-----------*/
+
+.middleFooter{}
+
+.searchFooter{}
+.searchFooter .form{
+    width: 50%;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+.middleFooterItem{
+    margin-bottom:20px;
+}
+.middleFooterItem h4{
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+.middleFooterItem ul li{
+    margin-bottom:10px;
+}
+.middleFooterItem ul li a{
+    text-decoration: none;
+    font-weight:400;
+    color:#3c763d;
+}
+.middleFooterItem ul li a:hover{
+    color: #2e6da4;
+}

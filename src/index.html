@@ -1,14 +1,46 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="">
 <head>
-  <meta charset="utf-8">
-  <title>Cf</title>
-  <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <base href="/">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!--  owl carousel plugin -->
+    <link rel="stylesheet" href="assets/css/owl/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl/owl.theme.default.css">
+    <link rel="stylesheet" href="assets/css/owl/owl.theme.green.css">
+
+    <link rel="stylesheet" href="assets/css/bootsnav.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/helper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
-  <app-root></app-root>
+
+<app-root></app-root>
+
+
+<!-------------------------------------------------------------------->
+<!-- Script files -->
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+<script src="assets/js/bootsnav.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl/owl.carousel.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".nav-tabs a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script>
 </body>
 </html>
