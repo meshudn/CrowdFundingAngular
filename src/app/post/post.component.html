@@ -1,5 +1,109 @@
 
 
+
+
+<!-- ------------*---------------
+   Section Name: Category
+   Created by: Meshu Debnath
+   -------------*--------------
+-->
+<div class="container-fluid categoryWrapper">
+  <div class="container">
+    <div class="row">
+      <div class="category_carousel owl-carousel">
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_medical"></div>
+          </div>
+          <h4><a (click)="search('medical')">Medical</a></h4>
+        </div>
+
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_other"></div>
+          </div>
+          <h4><a (click)="search('other')">Other</a></h4>
+        </div>
+
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_emerg"></div>
+          </div>
+          <h4><a (click)="search('emergencies')">Emergencies</a></h4>
+        </div>
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_edu"></div>
+          </div>
+          <h4><a (click)="search('education')">Education</a></h4>
+        </div>
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_memo"></div>
+          </div>
+          <h4><a (click)="search('memories')">Memories</a></h4>
+        </div>
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_sports"></div>
+          </div>
+          <h4><a (click)="search('sports')">Sports</a></h4>
+        </div>
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_animals"></div>
+          </div>
+          <h4><a (click)="search('animals')">Animals</a></h4>
+        </div>
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_wishes"></div>
+          </div>
+          <h4><a (click)="search('wishes')">Wishes</a></h4>
+        </div>
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_events"></div>
+          </div>
+          <h4><a (click)="search('events')">Events</a></h4>
+        </div>
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_business"></div>
+          </div>
+          <h4><a (click)="search('business')">Business</a></h4>
+        </div>
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_creative"></div>
+          </div>
+          <h4><a (click)="search('creative')">Creative</a></h4>
+        </div>
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_charity"></div>
+          </div>
+          <h4><a (click)="search('charity')">Charity</a></h4>
+        </div>
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_travel"></div>
+          </div>
+          <h4><a (click)="search('travel')">Travel</a></h4>
+        </div>
+        <div class="categoryItem">
+          <div class="categoryCircle">
+            <div class="categoryImg categoryCircle_community"></div>
+          </div>
+          <h4><a (click)="search('community')">Community</a></h4>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 <!-- ------------*---------------
    Section Name: All post Area
 
@@ -14,28 +118,31 @@
         <h4>Recomended for you</h4>
       </div>
 
-      <div class="col-sm-4" *ngFor="let item of postItems">
-        <div class="signlePost">
+      <div *ngFor="let item of postItems">
+        <div class="col-sm-4" *ngIf="item.active == '1'">
+          <div class="signlePost">
 
-          <div class="coverImg">
-            <a class="btn btn-link tagLine"><i class="fa fa-location-arrow"></i> Trending</a>
-            <img src="assets/img/{{item.image}}" class="img-responsive" alt="post image">
-            <h4>{{item.title}}</h4>
+            <div class="coverImg">
+              <a class="btn btn-link tagLine" *ngIf="item.total_amount >= item.target_amount"><i class="fa fa-location-arrow"></i> Trending</a>
+              <img src="assets/img/{{item.image}}" class="img-responsive" alt="post image">
+              <h4>{{item.title}}</h4>
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="width: 60%;"></div>
+            </div>
+
+            <h4 class="amountDetails">${{item.total_amount}} raised of ${{item.target_amount}}</h4>
+
+            <p class="postText">
+              {{item.description | sliceArray}}
+            </p>
+
+            <a routerLink="/details" target="_self" class="read_more" (click)="passingDetails(item.id)">+ Read More</a>
           </div>
-
-          <div class="progress">
-            <div class="progress-bar" style="width: 60%;"></div>
-          </div>
-
-          <h4 class="amountDetails">${{item.total_amount}} raised of ${{item.target_amount}}</h4>
-
-          <p class="postText">
-            {{item.description}}
-          </p>
-
-          <a routerLink="/details" class="read_more" (click)="passingDetails(item.id)">+ Read More</a>
         </div>
       </div>
+
 
 
 

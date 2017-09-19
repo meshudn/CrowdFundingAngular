@@ -1,0 +1,72 @@
+
+/*
+
+  login page
+*/
+
+.login_area {
+
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.login_body {
+
+    float: none;
+    margin: auto;
+}
+
+.login_header {
+
+}
+
+.login_header button {
+    border-radius: 0px;
+}
+
+.form_area {
+    background: #fff;
+    padding: 20px 50px;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: 1px 1px 5px #ddd;
+    -moz-box-shadow: 1px 1px 5px #ddd;
+    box-shadow: 1px 1px 5px #ddd;
+}
+
+.form_area h3 {
+    margin-left: -15px;
+    padding-bottom: 30px;
+    font-weight: 700;
+    font-size: 30px;
+    color: #292929;
+}
+
+.form_area input {
+    padding: 20px;
+}
+
+.form_area button {
+    padding: 10px 25px;
+    font-weight: 600;
+    border-radius: 0px;
+}
+
+.submit_addon {
+    background: none;
+    border: none;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    -webkit-appearance: push-button;
+    white-space: nowrap;
+    font-size: inherit;
+    -webkit-user-modify: read-only;
+    margin: 0px;
+    padding: 10px 25px;
+    color: #fff;
+    background: #337ab7;
+    border: none;
+    font-weight: 600;
+}

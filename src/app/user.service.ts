@@ -1,16 +1,13 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from "@angular/http";
 import "rxjs/add/operator/map";
 
 @Injectable()
-export class PostDetailsService {
+export class UserService {
 
-    postId;
+    constructor(private  http: Http) {}
 
-    constructor(private  http: Http) {
-    }
-
-    fetchData(id) {
+    fetchUser(username,password) {
 
         let headers = new Headers({
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -19,36 +16,16 @@ export class PostDetailsService {
             headers: headers
         });
 
-        let body = 'id=' + id;
+        let body = 'username=' + username+'&&password='+password;
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/singlePost.php", body, options).map(
+        return this.http.post("http://meshudebnath.com/project/angular/api/loginCheck.php", body, options).map(
             (response) => {
                 return response.json();
             }
         );
 
     }
-
-    fetchUpdate(id, limit, offset) {
-
-        let headers = new Headers({
-            'Content-Type': 'application/x-www-form-urlencoded'
-        });
-        let options = new RequestOptions({
-            headers: headers
-        });
-
-        let body = 'id=' + id + '&&limit=' + limit + '&&offset=' + offset;
-
-        return this.http.post("http://meshudebnath.com/project/angular/api/singleUpdate.php", body, options).map(
-            (response) => {
-                return response.json();
-            }
-        );
-
-    }
-
-    fetchComment(id) {
+    signUp(username,password,fullName,email) {
 
         let headers = new Headers({
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -57,9 +34,12 @@ export class PostDetailsService {
             headers: headers
         });
 
-        let body = 'id=' + id;
+        let now = new Date();
+        let cmtCreated = now.toISOString();
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/singleComment.php", body, options).map(
+        let body = 'username=' + username+'&&password='+password+'&&fullName='+fullName+'&&email='+email+'&&created_at='+cmtCreated+'&&role=1'+'&&uImage=im3.jpg';
+
+        return this.http.post("http://meshudebnath.com/project/angular/api/addUser.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -68,18 +48,22 @@ export class PostDetailsService {
     }
 
 
-    fetchPayment(id, limit, offset) {
+    addPost(title,description,target,tag,location,websites,image,time,user_id) {
+        /*let _formData = new FormData();
+        _formData.append("image", image);*/
 
-        let headers = new Headers({
-            'Content-Type': 'application/x-www-form-urlencoded'
-        });
+        let headers = new Headers(
+            {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        );
         let options = new RequestOptions({
             headers: headers
         });
 
-        let body = 'id=' + id + '&&limit=' + limit + '&&offset=' + offset;
+        let body = 'title=' + title+'&&description='+description+'&&target='+target+'&&tag='+tag+'&&address='+location+'&&websites='+websites+'&&image='+image+'&&created_at='+time+'&&user_id='+user_id;
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/singlePayment.php", body, options).map(
+        return this.http.post("http://meshudebnath.com/project/angular/api/createPost.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -87,7 +71,7 @@ export class PostDetailsService {
 
     }
 
-    fetchUser(id) {
+    getBanPost() {
 
         let headers = new Headers({
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -96,9 +80,63 @@ export class PostDetailsService {
             headers: headers
         });
 
-        let body = 'id=' + id;
+        let body = '';
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/findUser.php", body, options).map(
+        return this.http.post("http://meshudebnath.com/project/angular/api/singleBanPost.php", body, options).map(
+            (response) => {
+                return response.json();
+            }
+        );
+
+    }
+    getReportPost() {
+
+        let headers = new Headers({
+            'Content-Type': 'application/x-www-form-urlencoded'
+        });
+        let options = new RequestOptions({
+            headers: headers
+        });
+
+        let body = '';
+
+        return this.http.post("http://meshudebnath.com/project/angular/api/singleReportPost.php", body, options).map(
+            (response) => {
+                return response.json();
+            }
+        );
+
+    }
+    activate(id) {
+
+        let headers = new Headers({
+            'Content-Type': 'application/x-www-form-urlencoded'
+        });
+        let options = new RequestOptions({
+            headers: headers
+        });
+
+        let body = 'id='+id;
+
+        return this.http.post("http://meshudebnath.com/project/angular/api/activatePost.php", body, options).map(
+            (response) => {
+                return response.json();
+            }
+        );
+
+    }
+    banned(id) {
+
+        let headers = new Headers({
+            'Content-Type': 'application/x-www-form-urlencoded'
+        });
+        let options = new RequestOptions({
+            headers: headers
+        });
+
+        let body = 'id='+id;
+
+        return this.http.post("http://meshudebnath.com/project/angular/api/bannedPost.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -106,8 +144,8 @@ export class PostDetailsService {
 
     }
 
-    addComment(id, user_id, text, userImage, fullName,created_at) {
-
+    getPostForUser(id){
+        console.log(id + "dfjskdjf");
         let headers = new Headers({
             'Content-Type': 'application/x-www-form-urlencoded'
         });
@@ -115,18 +153,16 @@ export class PostDetailsService {
             headers: headers
         });
 
-        let body = 'id=' + id + '&&user_id=' + user_id + '&&text=' + text + '&&userImage=' + userImage + '&&fullName=' + fullName + '&&created_at=' + created_at;
+        let body = 'id='+id;
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/addComment.php", body, options).map(
+        return this.http.post("http://meshudebnath.com/project/angular/api/getPostForUser.php", body, options).map(
             (response) => {
                 return response.json();
             }
         );
-
     }
 
-    addLoveToComment(id) {
-
+    deletePost(id){
         let headers = new Headers({
             'Content-Type': 'application/x-www-form-urlencoded'
         });
@@ -134,48 +170,11 @@ export class PostDetailsService {
             headers: headers
         });
 
-        let body = 'id=' + id ;
-        return this.http.post("http://meshudebnath.com/project/angular/api/addLoveToComment.php", body, options).map(
+        let body = 'id='+id;
+        return this.http.post("http://meshudebnath.com/project/angular/api/deletePost.php", body, options).map(
             (response) => {
                 return response.json();
             }
         );
-
     }
-
-    addDonate(post_id,user_id,fullName,userImage,amount,created_at) {
-
-        let headers = new Headers({
-            'Content-Type': 'application/x-www-form-urlencoded'
-        });
-        let options = new RequestOptions({
-            headers: headers
-        });
-
-        let body = 'post_id=' + post_id + '&&user_id=' + user_id + '&&amount=' + amount + '&&userImage=' + userImage + '&&fullName=' + fullName + '&&created_at=' + created_at;
-
-        return this.http.post("http://meshudebnath.com/project/angular/api/addPayment.php", body, options);
-
-    }
-
-    getPostByCat(id,limit,offset) {
-
-        let headers = new Headers({
-            'Content-Type': 'application/x-www-form-urlencoded'
-        });
-        let options = new RequestOptions({
-            headers: headers
-        });
-
-        let body = 'id=' + id+'&&limit=' + limit+'&&offset='+offset;;
-
-        return this.http.post("http://meshudebnath.com/project/angular/api/getPostByCat.php", body, options).map(
-            (response) => {
-                return response.json();
-            }
-        );
-
-    }
-
-    singlePost;
 }

@@ -1,17 +1,26 @@
 import { Injectable } from '@angular/core';
-import {Http} from "@angular/http";
+import {Http, Response, Headers, RequestOptions} from "@angular/http";
 import "rxjs/add/operator/map";
+
 @Injectable()
 export class PostListService {
   constructor(private  http: Http) {}
 
-  fetchData(){
-      return this.http.get("http://localhost/angular/api/getAllPosts.php").map(
-         (response) => {
-             return response.json();
-         }
-     );
+  fetchData(limit,offset){
+      let headers = new Headers({
+          'Content-Type': 'application/x-www-form-urlencoded'
+      });
+      let options = new RequestOptions({
+          headers: headers
+      });
 
+      let body = 'limit=' + limit+'&&offset='+offset;
+
+      return this.http.post("http://meshudebnath.com/project/angular/api/getPostByLimit.php", body, options).map(
+          (response) => {
+              return response.json();
+          }
+      );
   }
 
   get(){

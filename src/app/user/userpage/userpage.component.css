@@ -1,0 +1,249 @@
+.settingsWrapper{
+    overflow-x: hidden;
+    min-height:400px;
+}
+
+.settings_nav{
+    margin-top: 20px;
+
+}
+.settings_nav > ul{
+
+}
+.settings_nav > ul li a{
+    height: 40px;
+    font-size: 16px;
+    color: #80809E;
+    font-weight: 600;
+}
+.settings_nav > ul li a:hover{
+    border-bottom: 4px solid orange;
+    transition: all 0.0s ease 0s;
+}
+.settings_tab{
+    margin-top :55px;
+    margin-bottom :55px;
+}
+.left_part{
+
+}
+.left_part b{
+}
+.left_part input{
+    height: 40px;
+    width: 350px;
+    border-radius: 6px;
+    border: 1px solid #e9ead7;
+    padding: 0px 12px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.file{
+    height: 40px;
+    width: 350px;
+    border-radius: 6px;
+    border: 1px solid #e9ead7;
+
+    margin-top: 10px;
+    font-size: 14px;
+
+}
+.change{
+    color: white;
+    background: purple;
+    transition: all 0.4s ease 0s;
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -.5px;
+}
+.change:hover{
+    color: white;
+    background: orange;
+}
+.add{
+    margin-left: 10px;
+    color: white;
+    background: purple;
+    transition: all 0.4s ease 0s;
+    width: 70px;
+    height: 38px;
+    margin-top: -5px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -.5px;
+}
+.add:hover{
+    color: white;
+    background: orange;
+}
+.save {
+    width: 250px;
+    height: 45px;
+    background: #0A0A3F none repeat scroll 0% 0%;
+    color: #FFF;
+    transition: all 0.4s ease 0s;
+    margin-left: 15px;
+    font-size: 16px;
+    padding: 10px;
+    font-weight: bold;
+}
+.save:hover{
+    color: white;
+    background: orange;
+}
+
+.messages{}
+.messages h3{
+    font-size: 40px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.search_select{
+    width: 100%;
+    height: 60px;
+}
+.search_select input{
+    float: left;
+    height: 45px;
+    width: 280px;
+    border-radius: 4px;
+    border: 1px solid #e9ead7;
+    box-shadow: 0px 0px 5px #F8F9FD;
+    transition: all 0.2s ease-in-out 0.2s;
+    padding: 10px;
+}
+.search_select select{
+    float: right;
+    height: 45px;
+    width: 150px;
+    border-radius: 4px;
+    border: 1px solid #e9ead7;
+    box-shadow: 0px 0px 5px #F8F9FD;
+    transition: all 0.2s ease-in-out 0.2s;
+    padding: 10px;
+}
+.search_select select:hover{
+    border: 1px solid lightgrey;
+    box-shadow: 1px 3px 8px #c2c1ad;
+}
+.search_select select option{
+    height: 45px;
+    width: 130px;
+    padding:10px;
+    transition: all 0.2s ease-in-out 0.2s;
+}
+.search_select select option:last-child{
+    border-bottom: 0px solid black;
+}
+.gif{
+    width: 100%;
+    height: 500px;
+    background: white;
+    text-align: center;
+    box-shadow: 1px 3px 8px #c2c1ad;
+}
+.gif p{
+    position: relative;
+    top: 100px;
+}
+.gif img{
+    padding-top: 100px;
+    height: 300px;
+    width: 150px;
+
+}
+
+
+
+
+
+
+/*
+settings
+*/
+
+
+.profile{
+    margin-top: 50px;
+    text-align: center;
+}
+.profile img{
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+}
+.profile h3{
+    font-weight: bold;
+    font-size: 32px;
+}
+
+
+.create_menu_nav {
+    padding: 0;
+    margin-top:20px;
+}
+.create_menu_nav > li{
+    list-style: none;
+    float: left;
+    background: #fff;
+    margin-right: 2px;
+    box-shadow: 1px 1px 12px #ddd;
+    border: 1px solid #ddd;
+}
+.create_menu_nav > li > a{
+    font-weight:600;
+    border: 0px;
+    color: #3c763d;
+    font-size: 14px;
+    transition: all .5s;
+    text-decoration: none;
+}
+.create_menu_nav > li:hover{
+    background: none;
+}
+.create_menu_nav > li a:hover{
+    color: #d58512;
+}
+
+.basic h4 {
+    font-weight:800;
+    color: #000;
+
+}
+.basic p{
+    font-size:16px;
+    color: #555;
+}
+.create_menu_nav{
+    border: 0px;
+}
+.create_menu_nav > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+    background-color: #fff;
+    border-radius: 0px;
+    border: 0px;
+}
+
+.create_menu_tab{
+    margin-top:-20px;
+}
+
+.cateogry_select option {
+    text-transform: capitalize;
+    font-weight:600;
+    color: #222;
+    padding:5px 5px;
+}
+
+#report ul li {
+    font-weight:800;
+    font-size:18px;
+}
+
+#report h3, #banPost h3{
+    font-weight:800;
+    font-size: 18px;
+    margin:15px 0px;
+}

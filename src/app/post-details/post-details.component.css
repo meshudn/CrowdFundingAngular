@@ -3,15 +3,18 @@
 */
 
 body{
-    font-family: 'Lato', sans-serif;
-    background: #FEFAF6;
+    /*font-family: 'Lato', sans-serif;*/
+    background: #f9f9f9 !important;
 
 }
 
 .like_div{
     margin-top: 80px;
 }
-.left_part{}
+.left_part{
+    /*padding-bottom: 100%;*/
+
+}
 .left_part_header{}
 .left_part_body{
     padding: 10px 0px 10px 10px;
@@ -19,20 +22,39 @@ body{
 .left_part_body h1{
     border-bottom: 1px dotted #CACACA;
     margin-bottom: 10px;
-    padding: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
     line-height: 1.23;
-    font-size: 28px;
+    font-size: 25px;
+    font-weight: 800;
 }
 .hr_tag_color{
 
 }
-.body_tab{}
-.body_tab ul{
+.body_tab{
+    overflow-x: hidden;
+}
+.body_tab > ul{
     margin-bottom: 20px;
     padding: 10px 10px 0px 10px;
-    border-bottom: 1px dotted #F6E2C7;
+    /*border-bottom: 1px dotted #F6E2C7;*/
     height: 55px;
 
+}
+.body_tab > ul li a{
+    font-weight:800;
+    color: #2e6da4;
+}
+.body_tab > ul li{
+    position: relative;
+}
+.body_tab > ul .active :after{
+    position: absolute;
+    content: '';
+    width: 99%;
+    bottom: -1px;
+    left: 0;
+    border-bottom: 2px solid #2e6da4;
 }
 .story{
     width: 50%;
@@ -43,9 +65,11 @@ body{
 .story a{
     color: #DC8A1D;
 }
-#story p{
+#story {
     font-size: 17px;
-    padding: 12px;
+    font-weight:500;
+    color: #000;
+    /*padding: 12px;*/
 }
 .update{
     width: 50%;
@@ -55,15 +79,47 @@ body{
     color: #DC8A1D;
 }
 
+.updateNo{
+    font-size: 17px;
+    font-weight:800;
+    color: #2e6da4;
 
+}
 
+#update{
+    font-size: 17px;
+    font-weight:500;
+    color: #000;
+}
 
-
+#update > p {
+    color: #444;
+    margin-bottom:20px;
+}
+#update > h3{
+    font-weight:600;
+    color: #222;
+    font-size:17px;
+}
+#update ul li{
+    margin-bottom:50px;
+}
+.updateContent{
+    line-height: 1.6em;
+}
 /*right column*/
 .right_part_header{
     padding: 20px;
 }
-
+.right_part_header h4{
+    font-weight:600;
+    color: #555;
+}
+.right_part_header h4 strong{
+    font-weight:800;
+    color: #000;
+    font-size: 22px;
+}
 #myProgress {
     width: 100%;
     background-color: #DDD;
@@ -79,11 +135,11 @@ body{
 
 .right_part_header button{
     width: 100%;
-    background: #C57C1A;
+    background: #2e6da4;
     color: white;
-    height: 60px;
+    height: 40px;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 18px;
     border-bottom: 3px solid #A66816;
 }
 .right_part_header button:hover{
@@ -110,9 +166,19 @@ body{
 .rf{
     float: left;
     border-radius: 50%;
-    padding: 15px;
     margin-right: 25px;
-    margin-top: 5px;
+    margin-top: 10px;
+    background: #fff;
+    height:50px;
+    width:50px;
+}
+.rf span {
+    color: #999;
+    position: absolute;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
 }
 .right_part_body_contact{
     float: left;
@@ -215,13 +281,215 @@ body{
     font-size: 16px;
     margin-top: 20px;
     text-align: center;
-
+    cursor: pointer;
     transition: all 0.4s ease 0s;
 }
-.top_see_more:hover{
-    background: #f4f9fc;
+.top_see_more:hover a{
+    color: #d58512;
 }
 .top_see_more a{
+    transition: all .5s;
     text-decoration: none;
-    color: #DC8A1D;
+    color: #2e6da4;
+    font-weight:800;
+    font-size:16px;
 }
+
+.payImage{
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    margin-right:10px;
+}
+
+.highlight{
+    font-weight:800;
+    font-size:14px;
+    margin-bottom:5px;
+    color: #000;
+}
+.payment_time{
+    color: #888;
+    font-size: 14px;
+}
+
+
+
+/*
+ comment css
+*/
+
+
+.comment{
+    margin-top: 80px;
+}
+.leave_comment {
+    width: 100%;
+    height: 50px;
+    color: #3B579D;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    box-shadow: 2px 2px 2px -2px grey;
+}
+.leave_comment:hover{
+    color: darkblue;
+    transition: all 0.4s ease 0s;
+
+}
+.image_part{
+    margin-top: 40px;
+}
+.comment_part{
+    margin-top: 40px;
+}
+.user_name{
+    float: left;
+}
+.user_name h3{
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight:600;
+    color: #222;
+}
+.user_name p{
+    font-size:14px;
+    color: #777;
+}
+.like_icon {
+    float: right;
+    margin-top: 20px;
+    color: red;
+    font-weight: normal;
+    margin-right: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.like_icon p{
+    color: #555;
+    font-weight:600;
+}
+.post_comment{
+    margin-top: 75px;
+    margin-left: 105px;
+}
+.post_comment p {
+    font-size:17px;
+    color: #000;
+}
+.commentImage{
+    margin-left:15px;
+    margin-right:40px;
+    margin-top:10px;
+}
+
+.write_comment{
+    height: 70px;
+    background: white;
+    padding-left:15px;
+    padding-right:15px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.4s ease 0s;
+    display: flex;
+}
+.write_comment_item{
+
+}
+.write_comment_item:nth-child(2){
+    flex-basis:70%;
+}
+.write_comment_item .form-control{
+    height: 42px;
+    border-radius: 0px;
+    margin-top:16px;
+}
+.commentPost{
+    border-radius: 0px;
+    margin-top: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/* end of comment css */
+
+
+
+
+/*
+
+  login page
+*/
+
+.login_area {
+
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.login_body {
+
+    float: none;
+    margin: auto;
+}
+
+.login_header {
+
+}
+
+.login_header button {
+    border-radius: 0px;
+}
+
+.form_area {
+    background: #fff;
+    padding: 20px 50px;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: 1px 1px 5px #ddd;
+    -moz-box-shadow: 1px 1px 5px #ddd;
+    box-shadow: 1px 1px 5px #ddd;
+}
+
+.form_area h3 {
+    margin-left: -15px;
+    padding-bottom: 30px;
+    font-weight: 700;
+    font-size: 30px;
+    color: #292929;
+}
+
+.form_area input {
+    padding: 20px;
+}
+
+.form_area button {
+    padding: 10px 25px;
+    font-weight: 600;
+    border-radius: 0px;
+}
+
+.submit_addon {
+    background: none;
+    border: none;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    -webkit-appearance: push-button;
+    white-space: nowrap;
+    font-size: inherit;
+    -webkit-user-modify: read-only;
+    margin: 0px;
+    padding: 10px 25px;
+    color: #fff;
+    background: #337ab7;
+    border: none;
+    font-weight: 600;
+}
+

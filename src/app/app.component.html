@@ -15,23 +15,26 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" routerLink="/home"><img src="assets/img/logo.jpg" class="logo" alt=""></a>
+            <a class="navbar-brand" routerLink="/login"><img src="assets/img/logo.jpg" class="logo" alt=""></a>
         </div>
         <!-- End Header Navigation -->
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Explore</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#"><i class="fa fa-flash"></i> Start A Campaign</a></li>
-                <li><a href="#">Log in</a></li>
-                <li><a href="#">Sign up</a></li>
+                <li><a  routerLink="/home">Home</a></li>
+                <li><a  routerLink="/dashboard">Dashboard</a></li>
+                <li><a  routerLink="">About us</a></li>
+                <li><a  ><i class="fa fa-flash"></i> Start A Campaign</a></li>
+                <li><a  routerLink="/login">Log in</a></li>
+                <li *ngIf="loginUserID != null"><a routerLink="">Logout</a></li>
+
             </ul>
         </div><!-- /.navbar-collapse -->
     </div>
 </nav>
+
+
 
 <!-- ------------*---------------
    Section Name: slider
@@ -39,7 +42,7 @@
    Created by: Meshu Debnath
    -------------*--------------
 -->
-<div class="container-fluid owl_slider">
+<div class="container-fluid owl_slider" *ngIf="router.url === '/' || router.url === '/home'">
     <div class="row">
         <div class="mySlider owl-carousel">
             <div>
@@ -127,116 +130,9 @@
 </div>
 
 
-<!-- ------------*---------------
-   Section Name: Category
-   Created by: Meshu Debnath
-   -------------*--------------
--->
-<div class="container-fluid categoryWrapper">
-    <div class="container">
-        <div class="row">
-            <div class="category_carousel owl-carousel">
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_medical"></div>
-                    </div>
-                    <h4><a href="#">Medical</a></h4>
-                </div>
-
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_other"></div>
-                    </div>
-                    <h4><a href="#">Other</a></h4>
-                </div>
-
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_volunteer"></div>
-                    </div>
-                    <h4><a href="#">Volunteer</a></h4>
-                </div>
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_emerg"></div>
-                    </div>
-                    <h4><a href="#">Emergencies</a></h4>
-                </div>
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_edu"></div>
-                    </div>
-                    <h4><a href="#">Education</a></h4>
-                </div>
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_memo"></div>
-                    </div>
-                    <h4><a href="#">Memories</a></h4>
-                </div>
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_sports"></div>
-                    </div>
-                    <h4><a href="#">Sports</a></h4>
-                </div>
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_animals"></div>
-                    </div>
-                    <h4><a href="#">Animals</a></h4>
-                </div>
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_wishes"></div>
-                    </div>
-                    <h4><a href="#">Wishes</a></h4>
-                </div>
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_events"></div>
-                    </div>
-                    <h4><a href="#">Events</a></h4>
-                </div>
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_business"></div>
-                    </div>
-                    <h4><a href="#">Business</a></h4>
-                </div>
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_creative"></div>
-                    </div>
-                    <h4><a href="#">Creative</a></h4>
-                </div>
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_charity"></div>
-                    </div>
-                    <h4><a href="#">Charity</a></h4>
-                </div>
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_travel"></div>
-                    </div>
-                    <h4><a href="#">Travel</a></h4>
-                </div>
-                <div class="categoryItem">
-                    <div class="categoryCircle">
-                        <div class="categoryImg categoryCircle_community"></div>
-                    </div>
-                    <h4><a href="#">Community</a></h4>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 <!-- ------------------------- Container body for angular -- -------------->
 
-<app-post></app-post>
 
 <router-outlet></router-outlet>
 

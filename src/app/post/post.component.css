@@ -1,0 +1,12 @@
+.categoryItem{
+    cursor: pointer;
+}
+.categoryItem:hover a{
+    color: #d58512;
+}
+.categoryItem a{
+    text-decoration: none;
+}
+.viewMore{
+    cursor: pointer;
+}

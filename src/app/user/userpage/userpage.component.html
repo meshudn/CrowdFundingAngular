@@ -1,0 +1,258 @@
+
+<div class="container-fluid settingsWrapper">
+    <div class="container">
+        <div class="row">
+            <div  *ngIf="loginRole == 1;else admin;">
+
+            <div class="col-sm-offset-1 col-sm-10 settings_nav">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a (click)="$event.preventDefault(); userHelper('menu6');" href="#menu6">My Projects</a></li>
+                    <li><a (click)="$event.preventDefault(); userHelper('menu7');" href="#menu7">Start New Project</a></li>
+                    <li><a (click)="$event.preventDefault(); userHelper('menu4');" href="#menu4">Messages</a></li>
+                    <li><a (click)="$event.preventDefault(); userHelper('menu5');" href="#menu5">Profile</a></li>
+                    <li><a (click)="$event.preventDefault(); userHelper('menu1');" href="#menu1">Edit Profile</a></li>
+                </ul>
+                <br>
+
+                <!-- create new project -->
+
+                <div class="tab-content">
+                    <div id="menu7" class="tab-pane fade">
+
+                        <ul class="nav nav-tabs create_menu_nav">
+                            <li class="active">
+                                <a (click)="$event.preventDefault();userHelper2('basic');" href="#basic">Basic</a>
+                            </li>
+                            <li class="">
+                                <a (click)="$event.preventDefault();userHelper2('payment');" href="#payment">Payment History</a>
+                            </li>
+                            <li class="">
+                                <a (click)="$event.preventDefault();userHelper2('settings');" href="#settings">Settings</a>
+                            </li>
+
+                        </ul>
+
+                        <br>
+                        <br><br>
+
+                        <div class="formWrapper ">
+
+                            <div class="create_menu_tab tab-content">
+
+
+                                <div class="tab-pane fade"  id="basic">
+
+                                    <h3>Lets Get Started</h3>
+                                    <p>Make a great first impression with your project’s title and image, and set
+                                        your funding goal,
+                                        campaign duration, and project category.</p>
+
+
+                                    <br>
+                                    <div *ngIf="createMsg != null">
+                                        <div class = "alert alert-success alert-dismissable">
+                                            <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                                                &times;
+                                            </button>
+                                            {{ createMsg}}
+                                        </div>
+                                    </div>
+
+                                    <form class="form-horizontal"  [formGroup]="createPostForm" (ngSubmit)="createPost(createPostForm.value)">
+                                        <div class="col-sm-6">
+                                            <b>Title</b><br>
+                                            <input class="form-control" formControlName="title" type="text" placeholder="Project Title"><br><br>
+                                            <b>Description</b><br>
+                                            <textarea rows="10" class="form-control" type="text" formControlName="description"
+                                                      placeholder="Description"></textarea><br><br>
+
+                                            <b>Picture</b><br>
+                                            <input type="file" #fileupload formControlName="image"  (change)="fileChange(fileupload.files)"/>
+                                            <br><br>
+
+                                            <b>Tag</b><br>
+                                            <select type="select" class="form-control cateogry_select" formControlName="tag">
+                                                <option value="medical">Medical</option>
+                                                <option value="community">Community</option>
+                                                <option value="travel">Travel</option>
+                                                <option value="charity">Charity</option>
+                                                <option value="education">Education</option>
+                                                <option value="creative">Creative</option>
+                                                <option value="emergencies">emergencies</option>
+                                                <option value="sports">sports</option>
+                                                <option value="business">business</option>
+                                                <option value="event">event</option>
+                                            </select>
+                                            <br><br>
+
+                                            <button type="submit" class="btn save">Save Changes</button>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <b>Target Amount</b><br>
+                                            <input formControlName="target_amount" class="form-control" type="number" placeholder="$1000"><br><br>
+
+                                            <b>Location</b><br>
+                                            <input formControlName="address" class="form-control" type="text" placeholder="Location"><br><br>
+
+
+                                            <b>Websites</b><br>
+                                            <input formControlName="websites" class="form-control" type="text" placeholder="Websites">
+                                            <br><br>
+
+                                        </div>
+                                        <br><br>
+
+
+                                    </form>
+                                    <br><br>
+
+
+                                </div>
+
+
+                                <div class="tab-pane fade"  id="payment">
+
+                                </div>
+
+
+                                <div class="tab-pane fade"  id="settings">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!--
+                     Edit profile
+                    -->
+                    <div id="menu1" class="tab-pane fade">
+                        <div class="col-sm-6 left_part">
+                            <b>Name</b><br>
+                            <input type="text" placeholder="Name"><br><br>
+                            <b>Email</b><br>
+                            <input type="email" placeholder="Email"><br><br>
+                            <b>Current Password</b><br>
+                            <input type="password" placeholder="Password"><br><br>
+                            <b>Change Password</b><br>
+                            <button class="btn change">Change Password</button>
+                            <br><br>
+                        </div>
+                        <div class="col-sm-6 left_part">
+                            <b>Location</b><br>
+                            <input type="text" placeholder="Location"><br><br>
+                            <b>Biography</b><br>
+                            <input type="text" placeholder="Biography"><br><br>
+                            <b>Websites</b><br>
+                            <input type="text" placeholder="Websites" style="width:200px;">
+                            <button class="btn add">Add</button>
+                            <br><br>
+                            <b>Picture</b><br>
+                            <input type="file" id="myFile" class="file"
+                                   placeholder="Choose an image from your Computer"><br><br>
+                        </div>
+                        <button class="btn save">Save Changes</button>
+                        <br><br>
+                    </div>
+
+
+                    <div id="menu3" class="tab-pane fade">
+                        <h3>Manage payment options </h3>
+                        <p>Any payment methods you save to Kickstarter will be listed here (securely) for your
+                            convenience. To save a card for future pledges, just click "Add a new card." </p>
+                    </div>
+
+
+                    <div id="menu4" class="tab-pane fade messages">
+                        <h3>Messages</h3>
+                        <h5 class="alert alert-warning">Coming soon ..</h5>
+                        <p>N:B: This feature is launching in the next version.</p>
+                    </div>
+
+
+                    <div id="menu5" class="tab-pane fade profile">
+                        <img src="../../../assets/img/img3.jpg">
+                        <h3>Full Name: {{userFullName}}</h3>
+                        <h4>Email: {{userEmail}}</h4>
+                        <h4>Username: {{userName}}</h4>
+
+                    </div>
+
+                    <div id="menu6" class="tab-pane fade in active">
+                        <ul class="list-unstyled list-group">
+                            <li class="list-group-item text-warning" #link *ngFor="let item of userPost; let i = index;">
+                                <h5> <b>#{{i+1}} {{item.title}}</b>
+                                    <a class="text-danger" style="margin-left: 10px;float:right;cursor: pointer" (click)="deletePost(item.id,link)"><i class="fa fa-window-close-o"> Delete!</i></a>
+                                    <a  routerLink="/details" target="_self" class="read_more" (click)="passingDetails(item.id)">+ view details</a>
+
+                                </h5>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            </div> <!-- user template -->
+
+            <!-- admin template -->
+
+            <ng-template #admin>
+
+
+                <div class="col-sm-offset-1 col-sm-10 settings_nav">
+
+
+                    <!-- create new project -->
+
+                    <div class="tab-content">
+                        <!--
+                         Edit profile
+                        -->
+
+                        <div id="report" >
+                            <h3 *ngIf="singlePost != null">List of all reported Project</h3>
+                            <ul class="list-unstyled list-group">
+                                <li class="list-group-item text-warning" #link *ngFor="let item of singlePost; let i = index;">
+                                   <h5> <b>#{{i+1}} {{item.title}}</b>
+                                       <a class="text-danger" style="margin-left: 10px;float:right;cursor: pointer" (click)="banned(item.id,link)"><i class="fa fa-check-circle">Deactivate Now!</i></a>
+                                       <a  routerLink="/details" target="_self" class="read_more" (click)="passingDetails(item.id)">+ view details</a>
+
+                                   </h5>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <br><br><br>
+                        <div id="banPost" >
+                            <h3 *ngIf="banPost != null">List of all Banned Project</h3>
+                            <ul class="list-unstyled list-group">
+                                <li class="list-group-item text-success" #link *ngFor="let item of banPost; let i = index;">
+                                    <h5> <b>#{{i+1}} {{item.title}} </b>
+                                        <a class="text-danger" style="margin-left: 10px;float:right;cursor: pointer" (click)="activated(item.id,link)"><i class="fa fa-check-circle">Activate Now!</i></a>
+                                        <a  routerLink="/details" target="_self" class="read_more" (click)="passingDetails(item.id)">+ view details</a>
+
+                                    </h5>
+                                </li>
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+
+            </ng-template>
+
+
+        </div>
+    </div>
+</div>

@@ -1,13 +1,15 @@
+
+
 <div class="container-fluid">
     <div class="container">
         <div class="row like_div">
             <div class="col-sm-7">
                 <div class="left_part thumbnail">
                     <div class="left_part_header">
-                        <img src="assets/img/img1.jpg" class="assets/img-responsive">
+                        <img src="assets/img/{{image}}" class="img-responsive">
                     </div>
                     <div class="left_part_body">
-                        <h1>Reuben's Fight</h1>
+                        <h1>{{title}}</h1>
                         <div class="hr_tag_color">
 
                         </div>
@@ -19,53 +21,21 @@
 
                             <div class="tab-content">
                                 <div id="story" class="tab-pane fade in active">
-                                    <p>Thank you so much for visiting Reuben's page. </p>
-                                    <br>
-                                    <br>
-                                    <p>I always struggled to watch adverts on TV about families being told their loved
-                                        ones had cancer. Never really knowing how it must feel to hear those words; but
-                                        now
-                                        Thank you so much for your support.</p>
-                                    <p>n 100 children in the U.K. each year.
-                                        As tests promptly started each piece of news seemed more devastating. I still
-                                        find it hard to see Reuben's name on paperwork next to the words: stage 4, high
-                                        risk, metastatic neuroblastoma. As in 50% of cases of this aggressive type of
-                                        cancer, his primary tumour was found in his abdomen but had already spread to
-                                        bones and bone marrow before we had any idea.
-                                    </p>
-                                    <p>n 100 children in the U.K. each year.
-                                        As tests promptly started each piece of news seemed more devastating. I still
-                                        find it hard to see Reuben's name on paperwork next to the words: stage 4, high
-                                        risk, metastatic neuroblastoma. As in 50% of cases of this aggressive type of
-                                        cancer, his primary tumour was found in his abdomen but had already spread to
-                                        bones and bone marrow before we had any idea.
-                                    </p>
-                                    <p>n 100 children in the U.K. each year.
-                                        As tests promptly started each piece of news seemed more devastating. I still
-                                        find it hard to see Reuben's name on paperwork next to the words: stage 4, high
-                                        risk, metastatic neuroblastoma. As in 50% of cases of this aggressive type of
-                                        cancer, his primary tumour was found in his abdomen but had already spread to
-                                        bones and bone marrow before we had any idea.
-                                    </p>
-                                    <p>n 100 children in the U.K. each year.
-                                        As tests promptly started each piece of news seemed more devastating. I still
-                                        find it hard to see Reuben's name on paperwork next to the words: stage 4, high
-                                        risk, metastatic neuroblastoma. As in 50% of cases of this aggressive type of
-                                        cancer, his primary tumour was found in his abdomen but had already spread to
-                                        bones and bone marrow before we had any idea.
-                                    </p>
-                                    <p>n 100 children in the U.K. each year.
-                                        As tests promptly started each piece of news seemed more devastating. I still
-                                        find it hard to see Reuben's name on paperwork next to the words: stage 4, high
-                                        risk, metastatic neuroblastoma. As in 50% of cases of this aggressive type of
-                                        cancer, his primary tumour was found in his abdomen but had already spread to
-                                        bones and bone marrow before we had any idea.
-                                    </p>
+                                    {{description}}
                                 </div>
                                 <div id="update" class="tab-pane fade">
-                                    <h3>Update</h3>
-                                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                        aliquip ex ea commodo consequat.</p>
+                                    <h3>Last Update: {{updateLastTimeMsg}}</h3>
+
+                                    <ul class="list-group list-unstyled">
+                                        <li *ngFor="let updateItem of updatePost; let i = index;">
+                                            <h3 class="updateNo">Update #{{i+1}}</h3>
+                                            <p class="updateContent">{{updateItem.description}}</p>
+                                        </li>
+                                    </ul>
+                                    <br>
+                                    <div class="alert viewMore">
+                                        <a class="h4" (click)="moreUpdate()">Load More <i class="fa fa-send"></i></a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -73,27 +43,103 @@
 
                     </div>
                 </div>
+
+                <!--
+                 Section: comment
+                -->
+                <div class="comment">
+
+                    <div class="top_see_more">
+                        <a class="h4" (click)="leaveComment('writeComment')">Leave a comment <i class="fa fa-comment"></i></a>
+                    </div>
+
+                    <div id="writeComment" *ngIf="loginUserID != null">
+
+                    <form [formGroup]="form" (ngSubmit)="postComment(form.value)">
+
+                        <div class="write_comment">
+                            <div class="write_comment_item">
+                                <div class="">
+                                    <img class="rf commentImage" src="../../assets/img/{{loginUserImage}}"
+                                         *ngIf="loginUserImage != ''; else uImageBlock;">
+
+                                    <ng-template #uImageBlock>
+                                        <div class="thumbnail rf commentImage">
+                                            <span>{{loginUsername | makeUserImage}}</span>
+                                        </div>
+                                    </ng-template>
+                                </div>
+                            </div>
+
+                            <div class="write_comment_item">
+                                <input formControlName="text" placeholder="Write Something" class="form-control"
+                                       type="text">
+                            </div>
+
+                            <div class="write_comment_item">
+                                <input type="submit" value="Post" class="btn btn-primary commentPost">
+                            </div>
+
+                        </div>
+                    </form>
+                    </div>
+                    <br><br>
+
+                    <div class="comment_repeat" *ngFor="let commentItem of commentPost">
+                        <div class="image_part">
+                            <img class="rf commentImage" src="../../assets/img/img3.jpg"
+                                 *ngIf="commentItem.userImage != ''; else commentImage;">
+
+                            <ng-template #commentImage>
+                                <div class="thumbnail rf commentImage">
+                                    <span>{{commentItem.fullName | makeUserImage}}</span>
+                                </div>
+                            </ng-template>
+                        </div>
+
+                        <div class="comment_part">
+                            <div class="user_name">
+                                <h3>{{commentItem.fullName}}</h3>
+                                <p>{{commentItem.created_at | jsTime}}</p>
+                            </div>
+                            <div class="like_icon" (click)="addLoveToComment(commentItem.id,loveReact)">
+                                <i class="fa fa-heart"></i>
+                                <p #loveReact>{{commentItem.love}}</p>
+                            </div>
+                            <br>
+                            <div class="post_comment">
+                                <p>{{commentItem.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of comment -->
             </div>
             <div class="col-sm-5">
                 <div class="right_part_header thumbnail">
-                    <h2><strong>£183,245</strong><span>of £250k goal</span></h2>
+                    <h4><strong #total_amount_ref >${{total_amount}}</strong><span> of ${{target_amount}} goal</span></h4>
                     <div id="myProgress">
                         <div id="myBar"></div>
                     </div>
-                    <p>Raised by 3,078 people in 6 months</p>
-                    <button class="btn">Donate Now</button>
+                    <p>Raised by {{total_people}} people</p>
+                    <button data-toggle="modal" *ngIf="loginUserID != null; else loginBlock" data-target="#donateModal" class="btn donate_btn">Donate Now</button>
+
+                    <ng-template #loginBlock>
+                        <button data-toggle="modal" data-target="#loginModal" class="btn donate_btn">Donate Now</button>
+
+                    </ng-template>
                 </div>
                 <div class="right_part_body">
-                    <p class="date_right">Created January 27, 2017</p>
+                    <p class="date_right">Created {{created_at | jsTime }}</p>
                     <div class="contact_whole_part">
                         <div class="thumbnail rf">
-                            <span>RF</span>
+                            <span>{{fullName | makeUserImage}}</span>
                         </div>
                         <div class="right_part_body_contact">
-                            <span class="right_part_body_contact_name">Reuben's Fight<a href="#"><i
+                            <span class="right_part_body_contact_name">{{fullName}}<a href="#"><i
                                     class="fa fa-envelope"></i></a></span><br>
-                            <span class="right_part_body_contact_medical"><a href="#"><i class="fa fa-tag"></i></a>Medical</span><br>
-                            <span class="right_part_body_contact_map"><a href="#"><i class="fa fa-map-marker"></i></a>Furze Platt Ward, ENG </span>
+                            <span class="right_part_body_contact_medical"><a href="#"><i class="fa fa-tag"></i></a>{{tag}}</span><br>
+                            <span class="right_part_body_contact_map"><a href="#"><i class="fa fa-map-marker"></i></a>{{PostAddress}} </span>
 
                         </div>
 
@@ -105,16 +151,22 @@
                 <div class="first_donor">
                     <p>First Donor</p>
                     <div class="contact_whole_part">
-                        <img class="rf" src="assets/img/img2.jpg">
-                        <div class="first_donor_content">
-                            <span class="right_part_body_contact_name">Stefanie Treleaven-Ford</span><br>
-                            <span class="right_part_body_contact_medical">£10 </span><br>
+                        <div *ngIf="topPayUserImageShow; else elseBlock">
+                            <img class="payImage img-responsive" src="../../assets/img/{{topPayUserImage}}">
+                        </div>
+                        <ng-template #elseBlock>
+                            <div class="thumbnail rf">
+                                <span>{{topPayUser | makeUserImage}}</span>
+                            </div>
+                        </ng-template>
+                        <div class="right_part_body_contact">
+                            <span class="right_part_body_contact_name">{{topPayUser}}</span><br>
+                            <span class="right_part_body_contact_medical">${{topPayAmount}} </span><br>
 
                         </div>
-
                     </div>
                 </div>
-                <div class="first_donor">
+                <!--<div class="first_donor">
                     <p>Most Raised From Sharing</p>
                     <div class="contact_whole_part">
                         <img class="rf" src="assets/img/img2.jpg">
@@ -124,71 +176,136 @@
                         </div>
                     </div>
                     <a href="#"><i class="fa fa-plus"></i> <span class="see_more">See More</span></a>
-                </div>
+                </div>-->
                 <div class="top_supports">
                     <a href="#">Recent Donations <span> <i class="fa fa-caret-down"></i></span></a>
                 </div>
-                <div class="recent_donations">
+                <br>
 
-                    <div class="contact_whole_part">
-                        <img class="rf" src="assets/img/img3.jpg">
-                        <div class="first_donor_content">
-                            <span class="right_part_body_contact_name" style="font-weight:bold;">£350</span><br>
-                            <span class="right_part_body_contact_medical">£145 from sharing</span><br>
-                            <span class="right_part_body_contact_medical">43 mins ago</span><br>
-                            <!-- <i class="fa fa-heart"></i> -->
-                            <div class="border_recent">
-                            </div>
+                <div class="first_donor">
+                    <p>Recent Donor</p>
+                    <div class="contact_whole_part" *ngFor="let payItem of paymentPost">
+
+                        <div class="thumbnail rf">
+                            <span>{{payItem.fullname | makeUserImage}}</span>
                         </div>
-                    </div>
-                    <div class="contact_whole_part">
-                        <img class="rf" src="assets/img/img2.jpg">
-                        <div class="first_donor_content">
-                            <span class="right_part_body_contact_name" style="font-weight:bold;">£110</span><br>
-                            <span class="right_part_body_contact_medical">£145 from sharing</span><br>
-                            <span class="right_part_body_contact_medical">23 mins ago</span><br>
-                            <div class="border_recent">
-                            </div>
+
+
+                        <div class="right_part_body_contact">
+                            <span class="right_part_body_contact_name highlight">${{payItem.amount}}</span><br>
+                            <span class="right_part_body_contact_name">{{payItem.fullname}}</span><br>
+                            <span class="payment_time">{{payItem.created_at | jsTime}} </span><br>
+
                         </div>
-                    </div>
-                    <div class="contact_whole_part">
-                        <img class="rf" src="assets/img/img4.jpg">
-                        <div class="first_donor_content">
-                            <span class="right_part_body_contact_name" style="font-weight:bold;">£325</span><br>
-                            <span class="right_part_body_contact_medical">£145 from sharing</span><br>
-                            <span class="right_part_body_contact_medical">12 mins ago</span><br>
-                            <div class="border_recent">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact_whole_part">
-                        <img class="rf" src="assets/img/img2.jpg">
-                        <div class="first_donor_content">
-                            <span class="right_part_body_contact_name" style="font-weight:bold;">£120</span><br>
-                            <span class="right_part_body_contact_medical">£145 from sharing</span><br>
-                            <span class="right_part_body_contact_medical">50 mins ago</span><br>
-                            <div class="border_recent">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact_whole_part">
-                        <img class="rf" src="assets/img/img3.jpg">
-                        <div class="first_donor_content">
-                            <span class="right_part_body_contact_name" style="font-weight:bold;">£333</span><br>
-                            <span class="right_part_body_contact_medical">£145 from sharing</span><br>
-                            <span class="right_part_body_contact_medical">42 mins ago</span><br>
-                            <div class="border_recent">
-                            </div>
-                        </div>
+
                     </div>
 
                 </div>
+
                 <br>
                 <div class="top_see_more">
-                    <a href="#"><span><i class="fa fa-plus"></i> See More</span></a>
+                    <a (click)="seeMorePayment()"><span><i class="fa fa-plus"></i> See More</span></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="donateModal"  tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Choose Amount</h4>
+            </div>
+            <form [formGroup]="donateForm" (ngSubmit)="donateNow(donateForm.value, total_amount_ref)">
+                <div class="modal-body">
+
+                    <input placeholder="Amount" type="number" formControlName="donateAmount" class="form-control">
+
+                    <br>
+                    <p *ngIf="donateForm.get('donateAmount').value !=''" class="alert alert-success">Thank you for
+                        donating &nbsp; ${{donateForm.get("donateAmount").value}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Done!</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<!--
+ login modal
+-->
+
+
+<div class="modal fade" id="loginModal"  tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Please Login before Donate</h4>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+                <div class="modal-body">
+                    <div class="form_area login" id="tabs-1">
+                        <h3>Login</h3>
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                    <input type="text" class="form-control" formControlName="username"
+                                           placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                                    <input type="password" class="form-control" formControlName="password"
+                                           placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="checkRemember" formControlName="remember">Remember me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group ">
+                                    <button class="btn btn-md btn-primary" type="submit" name="emp">Login
+                                    </button>
+                                    <div class="input-group-addon submit_addon"><p><a href="#" id="forgotPass1">Forgot
+                                        password?</a></p></div>
+                                </div>
+                            </div>
+
+                        <div class="login_alert" *ngIf="err">
+                            {{err}}
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 

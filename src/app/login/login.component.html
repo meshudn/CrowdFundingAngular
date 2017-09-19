@@ -1,0 +1,112 @@
+<div class="container-fluid login_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2">
+
+      </div>
+      <div class="col-sm-offset-2 col-sm-5">
+        <div class="row" id="mytabs">
+          <div class="login_header">
+            <button class="btn btn-md btn-primary" (click)="loginButton('tabs-1')" data-target="#tabs-1" id="tabs_btn_1">Login
+            </button>
+            <button class="btn btn-md btn-warning" (click)="loginButton('tabs-2')" data-target="#tabs-2" id="tabs_btn_2">Signup
+            </button>
+          </div>
+          <div class="form_area login" id="tabs-1">
+            <h3>Login</h3>
+            <form class="form-horizontal"  [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+              <div class="form-group">
+
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                  <input type="text" class="form-control" formControlName="username"
+                         placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                  <input type="password" class="form-control" formControlName="password"
+                         placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="checkRemember" formControlName="remember">Remember me
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group ">
+                  <button class="btn btn-md btn-primary" type="submit" name="emp">Login
+                  </button>
+                  <div class="input-group-addon submit_addon"><p><a href="#" id="forgotPass1">Forgot
+                    password?</a></p></div>
+                </div>
+              </div>
+            </form>
+            <div class="login_alert" *ngIf="err">
+                 {{err}}
+            </div>
+
+          </div>
+
+
+          <div class="form_area registration" id="tabs-2">
+            <h3>Signup</h3>
+            <form class="form-horizontal"  [formGroup]="signupForm" (ngSubmit)="signup(signupForm.value)">
+              <div class="form-group">
+
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                  <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                  <input type="password" class="form-control" formControlName="password"
+                         placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group">
+
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                  <input type="text" class="form-control" formControlName="username"
+                         placeholder="Username">
+                </div>
+              </div>
+              <div class="form-group">
+
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                  <input type="text" class="form-control" formControlName="fullname"
+                         placeholder="Full Name">
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <div class="input-group ">
+                  <button class="btn btn-md btn-primary" name="register">Register
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="login_alert">
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
