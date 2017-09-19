@@ -16,7 +16,7 @@ export class PostListService {
 
       let body = 'limit=' + limit+'&&offset='+offset;
 
-      return this.http.post("http://meshudebnath.com/project/angular/api/getPostByLimit.php", body, options).map(
+      return this.http.post("https://meshudebnath.com/project/angular/api/getPostByLimit.php", body, options).map(
           (response) => {
               return response.json();
           }

@@ -21,7 +21,7 @@ export class PostDetailsService {
 
         let body = 'id=' + id;
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/singlePost.php", body, options).map(
+        return this.http.post("https://meshudebnath.com/project/angular/api/singlePost.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -40,7 +40,7 @@ export class PostDetailsService {
 
         let body = 'id=' + id + '&&limit=' + limit + '&&offset=' + offset;
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/singleUpdate.php", body, options).map(
+        return this.http.post("https://meshudebnath.com/project/angular/api/singleUpdate.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -59,7 +59,7 @@ export class PostDetailsService {
 
         let body = 'id=' + id;
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/singleComment.php", body, options).map(
+        return this.http.post("https://meshudebnath.com/project/angular/api/singleComment.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -79,7 +79,7 @@ export class PostDetailsService {
 
         let body = 'id=' + id + '&&limit=' + limit + '&&offset=' + offset;
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/singlePayment.php", body, options).map(
+        return this.http.post("https://meshudebnath.com/project/angular/api/singlePayment.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -98,7 +98,7 @@ export class PostDetailsService {
 
         let body = 'id=' + id;
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/findUser.php", body, options).map(
+        return this.http.post("https://meshudebnath.com/project/angular/api/findUser.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -117,7 +117,7 @@ export class PostDetailsService {
 
         let body = 'id=' + id + '&&user_id=' + user_id + '&&text=' + text + '&&userImage=' + userImage + '&&fullName=' + fullName + '&&created_at=' + created_at;
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/addComment.php", body, options).map(
+        return this.http.post("https://meshudebnath.com/project/angular/api/addComment.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -135,7 +135,7 @@ export class PostDetailsService {
         });
 
         let body = 'id=' + id ;
-        return this.http.post("http://meshudebnath.com/project/angular/api/addLoveToComment.php", body, options).map(
+        return this.http.post("https://meshudebnath.com/project/angular/api/addLoveToComment.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -154,7 +154,7 @@ export class PostDetailsService {
 
         let body = 'post_id=' + post_id + '&&user_id=' + user_id + '&&amount=' + amount + '&&userImage=' + userImage + '&&fullName=' + fullName + '&&created_at=' + created_at;
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/addPayment.php", body, options);
+        return this.http.post("https://meshudebnath.com/project/angular/api/addPayment.php", body, options);
 
     }
 
@@ -169,7 +169,7 @@ export class PostDetailsService {
 
         let body = 'id=' + id+'&&limit=' + limit+'&&offset='+offset;;
 
-        return this.http.post("http://meshudebnath.com/project/angular/api/getPostByCat.php", body, options).map(
+        return this.http.post("https://meshudebnath.com/project/angular/api/getPostByCat.php", body, options).map(
             (response) => {
                 return response.json();
             }
