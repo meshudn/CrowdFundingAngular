@@ -15,6 +15,26 @@ export class PostComponent implements OnInit {
   constructor(private postList: PostListService, private postDetailsService : PostDetailsService) {
 
 
+
+      jQuery(".mySlider").trigger("refresh.owl.carousel");
+  }
+
+
+
+   postItems;
+  postId;
+  postLimit=6;postOffset=0;
+
+  ngOnInit() {
+     this.postList.fetchData(this.postLimit,this.postOffset).subscribe(
+         postItems => {
+             if(postItems != null){
+                 this.postItems = postItems;
+             }
+         }
+     );
+
+
       jQuery(".category_carousel").owlCarousel(
           {
               rtl:true,
@@ -34,18 +54,22 @@ export class PostComponent implements OnInit {
               }
           }
       );
-  }
-   postItems;
-  postId;
-  postLimit=6;postOffset=0;
-
-  ngOnInit() {
-     this.postList.fetchData(this.postLimit,this.postOffset).subscribe(
-         postItems => {
-           this.postItems = postItems;
-         }
-     );
-
+      jQuery(".mySlider").owlCarousel(
+          {
+              center: true,
+              items:3,
+              autoplay:true,
+              autoplayTimeout: 5000,
+              autoplayHoverPause:false,
+              autoplaySpeed: 2000,
+              loop:true,
+              responsive:{
+                  600:{
+                      items:2
+                  }
+              }
+          }
+      );
   }
 
 
@@ -56,7 +80,9 @@ export class PostComponent implements OnInit {
         this.postLimit += 6;
         this.postList.fetchData(this.postLimit,this.postOffset).subscribe(
             postItems => {
-                this.postItems = postItems;
+                if(postItems != null){
+                    this.postItems = postItems;
+                }
             }
         );
     }
@@ -70,7 +96,9 @@ export class PostComponent implements OnInit {
     search(x){
         this.postDetailsService.getPostByCat(x,this.postLimit,this.postOffset).subscribe(
             postItems => {
-                this.postItems = postItems;
+                if(postItems != null){
+                    this.postItems = postItems;
+                }
             }
         );
     }

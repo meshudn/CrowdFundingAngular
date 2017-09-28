@@ -1,4 +1,5 @@
-$(document).ready(function(){
+/*
+
     $(".mySlider").owlCarousel(
         {
             center: true,
@@ -34,5 +35,4 @@ $(document).ready(function(){
             }
         }
     );
-
-});
+    */

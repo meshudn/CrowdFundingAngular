@@ -5,6 +5,7 @@ import { UserService } from "../user.service";
 import {Observable} from 'rxjs/Rx';
 declare let jQuery:any;
 import { Router } from "@angular/router";
+import { Location} from "@angular/common";
 
 @Component({
     selector: 'app-post-details',
@@ -77,7 +78,7 @@ export class PostDetailsComponent implements OnInit {
 
     commentPostLength;
 
-    constructor(public route : Router,private postDetails: PostDetailsService, private fb: FormBuilder, private userService : UserService) {
+    constructor(private location: Location,  public route : Router,private postDetails: PostDetailsService, private fb: FormBuilder, private userService : UserService) {
         window.scrollTo(0,0);
 
         if (this.postDetails.postId != null) {
@@ -104,7 +105,9 @@ export class PostDetailsComponent implements OnInit {
         this.router = route;
 
     }
-
+    cancle(){
+        this.location.back();
+    }
     ngOnInit() {
 
     }

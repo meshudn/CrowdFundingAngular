@@ -18,7 +18,7 @@ export class UserService {
 
         let body = 'username=' + username+'&&password='+password;
 
-        return this.http.post("https://meshudebnath.com/project/angular/api/loginCheck.php", body, options).map(
+        return this.http.post("http://localhost/angular/api/loginCheck.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -39,7 +39,7 @@ export class UserService {
 
         let body = 'username=' + username+'&&password='+password+'&&fullName='+fullName+'&&email='+email+'&&created_at='+cmtCreated+'&&role=1'+'&&uImage=im3.jpg';
 
-        return this.http.post("https://meshudebnath.com/project/angular/api/addUser.php", body, options).map(
+        return this.http.post("http://localhost/angular/api/addUser.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -63,7 +63,7 @@ export class UserService {
 
         let body = 'title=' + title+'&&description='+description+'&&target='+target+'&&tag='+tag+'&&address='+location+'&&websites='+websites+'&&image='+image+'&&created_at='+time+'&&user_id='+user_id;
 
-        return this.http.post("https://meshudebnath.com/project/angular/api/createPost.php", body, options).map(
+        return this.http.post("http://localhost/angular/api/createPost.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -82,7 +82,7 @@ export class UserService {
 
         let body = '';
 
-        return this.http.post("https://meshudebnath.com/project/angular/api/singleBanPost.php", body, options).map(
+        return this.http.post("http://localhost/angular/api/singleBanPost.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -100,7 +100,7 @@ export class UserService {
 
         let body = '';
 
-        return this.http.post("https://meshudebnath.com/project/angular/api/singleReportPost.php", body, options).map(
+        return this.http.post("http://localhost/angular/api/singleReportPost.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -118,7 +118,7 @@ export class UserService {
 
         let body = 'id='+id;
 
-        return this.http.post("https://meshudebnath.com/project/angular/api/activatePost.php", body, options).map(
+        return this.http.post("http://localhost/angular/api/activatePost.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -136,7 +136,7 @@ export class UserService {
 
         let body = 'id='+id;
 
-        return this.http.post("https://meshudebnath.com/project/angular/api/bannedPost.php", body, options).map(
+        return this.http.post("http://localhost/angular/api/bannedPost.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -155,7 +155,7 @@ export class UserService {
 
         let body = 'id='+id;
 
-        return this.http.post("https://meshudebnath.com/project/angular/api/getPostForUser.php", body, options).map(
+        return this.http.post("http://localhost/angular/api/getPostForUser.php", body, options).map(
             (response) => {
                 return response.json();
             }
@@ -171,7 +171,7 @@ export class UserService {
         });
 
         let body = 'id='+id;
-        return this.http.post("https://meshudebnath.com/project/angular/api/deletePost.php", body, options).map(
+        return this.http.post("http://localhost/angular/api/deletePost.php", body, options).map(
             (response) => {
                 return response.json();
             }

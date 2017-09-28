@@ -1,4 +1,5 @@
-
+<app-header></app-header>
+<br><br>
 <div class="container-fluid settingsWrapper">
     <div class="container">
         <div class="row">
@@ -215,9 +216,9 @@
                         -->
 
                         <div id="report" >
-                            <h3 *ngIf="singlePost != null">List of all reported Project</h3>
+                            <h3 *ngIf="singlePost != null">List of Reported Project by user</h3>
                             <ul class="list-unstyled list-group">
-                                <li class="list-group-item text-warning" #link *ngFor="let item of singlePost; let i = index;">
+                                <li class="list-group-item text-success" #link *ngFor="let item of singlePost; let i = index;">
                                    <h5> <b>#{{i+1}} {{item.title}}</b>
                                        <a class="text-danger" style="margin-left: 10px;float:right;cursor: pointer" (click)="banned(item.id,link)"><i class="fa fa-check-circle">Deactivate Now!</i></a>
                                        <a  routerLink="/details" target="_self" class="read_more" (click)="passingDetails(item.id)">+ view details</a>
@@ -229,9 +230,9 @@
 
                         <br><br><br>
                         <div id="banPost" >
-                            <h3 *ngIf="banPost != null">List of all Banned Project</h3>
+                            <h3 *ngIf="banPost != null">List of Banned Project by Admin</h3>
                             <ul class="list-unstyled list-group">
-                                <li class="list-group-item text-success" #link *ngFor="let item of banPost; let i = index;">
+                                <li class="list-group-item text-danger" #link *ngFor="let item of banPost; let i = index;">
                                     <h5> <b>#{{i+1}} {{item.title}} </b>
                                         <a class="text-danger" style="margin-left: 10px;float:right;cursor: pointer" (click)="activated(item.id,link)"><i class="fa fa-check-circle">Activate Now!</i></a>
                                         <a  routerLink="/details" target="_self" class="read_more" (click)="passingDetails(item.id)">+ view details</a>
@@ -256,3 +257,5 @@
         </div>
     </div>
 </div>
+
+<app-footer></app-footer>

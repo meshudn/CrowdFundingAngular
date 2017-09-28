@@ -17,6 +17,10 @@ import {UserService} from "./user.service";
 import { HeaderComponent } from './header/header.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SliceArrayPipe } from './slice-array.pipe';
+import { FooterComponent } from './footer/footer.component';
+
+import * as $ from 'jquery/dist/jquery.js';
+
 
 const appRoutes: Routes = [
     {
@@ -39,6 +43,9 @@ const appRoutes: Routes = [
         path: "logout",
         component: LogoutComponent
     },
+    {
+        path: '',   redirectTo: '/home', pathMatch: 'full'
+    }
 ];
 
 @NgModule({
@@ -53,6 +60,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     LogoutComponent,
     SliceArrayPipe,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +69,7 @@ const appRoutes: Routes = [
       ReactiveFormsModule,
       RouterModule.forRoot(
           appRoutes,
+          { enableTracing: true }
       )
   ],
   providers: [PostListService,PostDetailsService,UserService],

@@ -83,7 +83,8 @@ export class UserpageComponent implements OnInit {
     getReportPost() {
         this.userService.getReportPost().subscribe(
             singlePost => {
-                this.singlePost = singlePost;
+                if(singlePost != null)
+                   this.singlePost = singlePost;
                 //console.log(this.singlePost[0].image);
 
                 console.log(this.singlePost);
@@ -95,7 +96,8 @@ export class UserpageComponent implements OnInit {
     getBanPost() {
         this.userService.getBanPost().subscribe(
             banPost => {
-                this.banPost = banPost;
+                if(banPost != null)
+                   this.banPost = banPost;
                 //console.log(this.singlePost[0].image);
 
                 console.log(this.banPost);
@@ -108,7 +110,8 @@ export class UserpageComponent implements OnInit {
     getPost() {
         this.userService.getPostForUser(this.loginUserID).subscribe(
             userPost => {
-                this.userPost = userPost;
+                if(userPost != null)
+                    this.userPost = userPost;
                 //console.log(this.singlePost[0].image);
 
                 console.log(this.loginUserID);

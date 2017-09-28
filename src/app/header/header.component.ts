@@ -13,12 +13,11 @@ export class HeaderComponent implements OnInit {
         this.router = route;
 
         this.loginUserID = sessionStorage.getItem("user_id");
+        console.log("login: "+this.loginUserID);
     }
   ngOnInit() {
   }
 
-    logOut(){
-        console.log("logout click");
-    }
+
 
 }
