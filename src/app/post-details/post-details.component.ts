@@ -13,6 +13,9 @@ import { Location} from "@angular/common";
     styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent implements OnInit {
+    /*
+     * class variables 
+    */
     router;
     private id;
     public singlePost;
@@ -40,13 +43,18 @@ export class PostDetailsComponent implements OnInit {
     tag;
     PostAddress;
 
+    
     username;
     fullName;
     uEmail;
     uImage;
     uActive;
     uRole;
-
+ 
+   /*
+    * variables for time diff calculation..
+    */
+    
     diff;
     comment_time;
     now;
@@ -60,7 +68,9 @@ export class PostDetailsComponent implements OnInit {
     paymentLimit = 3;
     paymentOffset = 0;
 
-    //comment
+    /*
+    * variables initialization for comment
+    */
     topPayUser;
     topPayAmount;
     topPayUserImage;
@@ -85,10 +95,15 @@ export class PostDetailsComponent implements OnInit {
             this.set(this.postDetails.postId);
         }
 
+       // getting session variable...
+      
         this.loginUserImage = sessionStorage.getItem("uImage");
         this.loginUsername = sessionStorage.getItem("fullName");
         this.loginUserID = sessionStorage.getItem("user_id");
 
+        /*
+         Form init..
+        */
         this.form = fb.group({
             'text': ''
         });
@@ -113,7 +128,7 @@ export class PostDetailsComponent implements OnInit {
     }
 
     ngOnDestroy() {
-       /* this.timer.unsubscribe();*/
+      
     }
 
     leaveComment() {
@@ -137,7 +152,10 @@ export class PostDetailsComponent implements OnInit {
         //this.getUpdate();
 
     }
-
+  
+    /*
+       Pagination method for Update Section..
+     */ 
     moreUpdate() {
         console.log("update offset");
         this.updateOffset += 3;
@@ -145,12 +163,18 @@ export class PostDetailsComponent implements OnInit {
 
     }
 
+
+    /*
+       Pagination method for Payment Details.
+     */   
     seeMorePayment() {
         console.log("see more clicked");
         this.getPayment(this.id, this.paymentLimit, this.paymentOffset);
     }
 
-
+    /*
+       get all the post for the initial view.
+     */ 
     getPost() {
         this.postDetails.fetchData(this.id).subscribe(
             singlePost => {
@@ -183,6 +207,9 @@ export class PostDetailsComponent implements OnInit {
 
     }
 
+    /*
+       get update post items.
+     */ 
     getUpdate(id, limit, offset) {
         this.postDetails.fetchUpdate(id, limit, offset).subscribe(
             updatePost => {
@@ -200,6 +227,9 @@ export class PostDetailsComponent implements OnInit {
         );
     }
 
+    /*
+       get comment items.
+     */ 
     getComment(id) {
         this.postDetails.fetchComment(id).subscribe(
             commentPost => {
@@ -213,7 +243,9 @@ export class PostDetailsComponent implements OnInit {
             }
         );
     }
-
+    /*
+       Like event for a single comment.
+     */ 
     addLoveToComment(id, love) {
         let x = parseInt(love.innerHTML);
         x = x + 1;
@@ -223,6 +255,9 @@ export class PostDetailsComponent implements OnInit {
 
     countPayment;
 
+    /*
+      get payment items from server.
+     */ 
     getPayment(id, limit, offset) {
         this.postDetails.fetchPayment(id, limit, offset).subscribe(
             paymentPost => {
@@ -248,6 +283,9 @@ export class PostDetailsComponent implements OnInit {
         );
     }
 
+    /*
+       get user details by a id parameter.
+     */ 
     getUser(id) {
         this.postDetails.fetchUser(id).subscribe(
             userList => {
@@ -271,6 +309,9 @@ export class PostDetailsComponent implements OnInit {
         );
     }
 
+    /*
+       Time calcualtion for a comment.
+     */ 
     dateCalc(comment_time) {
         // this.comment_time = "2017-09-14T03:24:00";
         this.comment_time = comment_time;
@@ -309,7 +350,9 @@ export class PostDetailsComponent implements OnInit {
     donateAmount;
 
 
-
+     /*
+      Donate method. It takes an amount and a DOM element to view the result in the DOM.
+     */ 
     donateNow(x,body) {
         this.donateAmount = x.donateAmount;
         let now = new Date();
